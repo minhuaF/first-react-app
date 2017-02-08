@@ -3,6 +3,8 @@ var fs = require('fs');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
+var nodeModulesPath = path.join(__dirname, './node_modules');
+
 module.exports = {
     devtool: 'cheap-module-eval-source-map',
     entry: {
@@ -11,6 +13,7 @@ module.exports = {
         ],
         vendors: ['react', 'react-dom'],
     },
+    
     output:{
         //path.resolve和path.join用法有不同； __dirname代表程序运行的根目录
         path: path.resolve(__dirname, 'dist'), 
@@ -18,6 +21,7 @@ module.exports = {
         publicPath: './dist/',
     },
     module:{
+        // // webpack1.0 的写法
         // loaders: [{
         //     test: /\.jsx?$/,
         //     include: [
@@ -46,6 +50,10 @@ module.exports = {
 
     resolve:{
         extensions: [".js", ".jsx", "scss", ".css"],
+        alias: {
+            'react': path.join(nodeModulesPath, '/react/dist/react'),
+            'react-dom': path.join(nodeModulesPath, '/react-dom/dist/react-dom')
+        }
     },
     plugins:[
         new webpack.optimize.CommonsChunkPlugin({name: "vendors", filename:"vendors.js"}),
@@ -56,7 +64,7 @@ module.exports = {
         new webpack.NoEmitOnErrorsPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
-            template: './dev.html',
+            template: 'dev.html',
             filename: '../index.html'
         })
     ]
