@@ -13,9 +13,9 @@
 - 文件的配置主要参看官方文档 [webpack2.0](https://webpack.js.org/configuration/) [wbpack-dev-server](http://webpack.github.io/docs/webpack-dev-server.html)
 <br/>
 
-通过上面的配置，如果只编译一个react文件的时候所需要的时间还是比较多的，而且上面还有一个莫名的记录。所以优化的空间还很大。<br/>
+通过上面的配置，如果只编译一个react文件的时候所需要的时间还是比较多的，而且上面还有一个莫名的记录。所以优化的空间还很大。
+<br/>
 ![image](https://github.com/minhuaF/first-react-app/blob/master/READMEIMG/pic01.png)
 
 <br/>
-
 ### 优化方案的介绍
