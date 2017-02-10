@@ -8,7 +8,7 @@
 - cnpm install --save-dev webpack
 - 配置webpack开发环境的配置文件 webpack.config.dev.js
 - cnpm install --save-dev babel-loader sass-loader style-loader css-loader 
-- cnpm install --save-dev HtmlWebpackPlugin 
+- cnpm install --save-dev html-webpack-plugin
 - 在app文件夹中创建react项目文件
 - cnpm install --save react react-dom
 - 创建server.js文件
