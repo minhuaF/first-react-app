@@ -56,7 +56,12 @@ module.exports = {
         }
     },
     plugins:[
-        new webpack.optimize.CommonsChunkPlugin({name: "vendors", filename:"vendors.js"}),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: "vendors", 
+            filename:"vendors.js",
+            minChunks: 2
+
+        }),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
             __DEV__: true,    
