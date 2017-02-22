@@ -9,7 +9,7 @@ config.entry.app.unshift("webpack-dev-server/client?http://localhost:" + PORT + 
 
 
 new WebpackDevServer(webpack(config), {
-    publicPath: "/dist/",
+    contentBase: "./dist",
     headers: {"X-Custom-Header": "yes"},
     hot: false,   // 若要自动更新服务器，这里应该要true值，可是不知道为什么，false值才可以
     stats: { 
